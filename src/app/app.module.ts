@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
+//nuevo de repositorio de Asly
+import { ErrorPageComponent } from './shared/error-page/error-page.component';
+
 // Modulos
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +28,8 @@ import { AddTokenInterceptor } from './utils/add-token.interceptor';
     SignInComponent,
     DashboardComponent,
     NavbarComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ import { AddTokenInterceptor } from './utils/add-token.interceptor';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }), // ToastrModule added
+    AppRoutingModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true }
